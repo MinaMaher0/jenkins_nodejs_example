@@ -1,12 +1,12 @@
 pipeline {
     agent any
     parameters { 
-      string( name: 'commit-id' ) 
+      string( name: 'commitID' ) 
     }
     stages {
       stage('print commit id'){
         steps{
-          sh 'echo "${params.commit-id}" '
+          sh 'echo "${params.commitID}" '
         }
       }
       // stage('Build docker image'){
