@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+  namespace: "namespace-value"
+  labels:
+    app: node-dep
+spec:
+  selector:
+    matchLabels:
+      app: node
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: node
+        tier: web
+    spec:
+      containers:
+      - name: node-app
+        image: minamaher0/node-app
+        ports:
+        - containerPort: 8080
+        env:
+        - name : HOST
+          valueFrom:
+            secretRef: 
+              name: app-secret
+              value: HOST
+        - name : USERNAME
+          valueFrom:
+            secretRef: 
+              name: app-secret
+              value: USERNAME
+        - name : PASSWORD
+          valueFrom:
+            secretRef: 
+              name: app-secret
+              value: PASSWORD
+        - name : DATABASE
+          valueFrom:
+            secretRef: 
+              name: app-secret
+              value: DATABASE
