@@ -16,7 +16,7 @@ pipeline {
           sh "sed -i 's/host-value/$mysql_host/g' app-secret.yaml"
           sh "sed -i 's/username-value/$mysql_username/g' app-secret.yaml"
           sh "sed -i 's/password-value/$mysql_password/g' app-secret.yaml"
-          sh "sed -i 's/database-value/$mysql_database${params.environment}/g' app-secret.yaml"
+          sh "sed -i 's/database-value/vodafone-${params.environment}/g' app-secret.yaml"
         }
       }
 
