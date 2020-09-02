@@ -4,8 +4,8 @@ pipeline {
       string( name: 'commitID' ) 
     }
     environment {
-        Docker-user-name     = credentials('Docker-user-name')
-        Docker-password	     = credentials('Docker-password	')
+        Docker_user_name     = credentials('Docker_user_name')
+        Docker_password	     = credentials('Docker_password	')
     }
     stages {
       stage('Build docker image'){
@@ -20,9 +20,9 @@ pipeline {
 
       stage('pushing the image to docker hub'){
         steps{
-          sh "docker tag node-app $Docker-user-name/node-app"
-          sh "docker login -u $Docker-user-name -p $Docker-password"
-          sh "docker push $Docker-user-name/node-app"
+          sh "docker tag node-app $Docker_user_name/node-app"
+          sh "docker login -u $Docker_user_name -p $Docker_password"
+          sh "docker push $Docker_user_name/node-app"
         }
       }
     }
