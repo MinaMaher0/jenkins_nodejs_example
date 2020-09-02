@@ -24,12 +24,10 @@ pipeline {
         steps{
           sh "kubectl get pods -n ${params.environment}"
           sh "kubectl auth can-i apply deployments --namespace ${params.environment}"
-          //sh "cat app-deployment.yaml"
-         // sh "kubectl apply -f mysql-service.yaml -n ${params.environment}"
-          //sh "kubectl apply -f app-secret.yaml -n ${params.environment}"
-          sh "kubectl apply -f test.yaml -n ${params.environment}"
-          //sh "kubectl apply -f app-deployment.yaml -n ${params.environment}"
-          //sh "kubectl apply -f app-service.yaml -n ${params.environment}"
+          sh "kubectl apply -f mysql-service.yaml -n ${params.environment}"
+          sh "kubectl apply -f app-secret.yaml -n ${params.environment}"
+          sh "kubectl apply -f app-deployment.yaml -n ${params.environment}"
+          sh "kubectl apply -f app-service.yaml -n ${params.environment}"
         }
       }
     }
