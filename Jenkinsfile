@@ -14,6 +14,7 @@ pipeline {
           dir('app') {
               git url: 'https://github.com/dobromir-hristov/todo-app'
               sh "git checkout ${params.commitID}"
+              sh "ls"
               sh "cat nodeapp/app.js"
              // sh 'docker build -t node-app .'
           }
