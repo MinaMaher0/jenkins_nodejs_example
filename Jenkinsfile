@@ -6,7 +6,7 @@ pipeline {
     stages {
       stage('print commit id'){
         steps{
-          sh 'echo "${params.commitID}" '
+          sh 'echo ${params.commitID}'
         }
       }
       // stage('Build docker image'){
