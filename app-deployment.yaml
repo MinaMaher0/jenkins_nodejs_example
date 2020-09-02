@@ -21,24 +21,24 @@ spec:
         image: minamaher0/node-app
         ports:
         - containerPort: 3000
-        # env:
-        # - name : HOST
-        #   valueFrom:
-        #     secretRef: 
-        #       name: app-secret
-        #       value: HOST
-        # - name : USERNAME
-        #   valueFrom:
-        #     secretRef: 
-        #       name: app-secret
-        #       value: USERNAME
-        # - name : PASSWORD
-        #   valueFrom:
-        #     secretRef: 
-        #       name: app-secret
-        #       value: PASSWORD
-        # - name : DATABASE
-        #   valueFrom:
-        #     secretRef: 
-        #       name: app-secret
-        #       value: DATABASE
+        env:
+        - name : HOST
+          valueFrom:
+            secretRef: 
+              name: app-secret
+              value: HOST
+        - name : USERNAME
+          valueFrom:
+            secretRef: 
+              name: app-secret
+              value: USERNAME
+        - name : PASSWORD
+          valueFrom:
+            secretRef: 
+              name: app-secret
+              value: PASSWORD
+        - name : DATABASE
+          valueFrom:
+            secretRef: 
+              name: app-secret
+              value: DATABASE
