@@ -24,21 +24,21 @@ spec:
         env:
         - name : HOST
           valueFrom:
-            secretRef: 
+            secretKeyRef: 
               name: app-secret
               key: HOST
         - name : USERNAME
           valueFrom:
-            secretRef: 
+            secretKeyRef: 
               name: app-secret
               key: USERNAME
         - name : PASSWORD
           valueFrom:
-            secretRef: 
+            secretKeyRef: 
               name: app-secret
               key: PASSWORD
         - name : DATABASE
           valueFrom:
-            secretRef: 
+            secretKeyRef: 
               name: app-secret
               key: DATABASE
