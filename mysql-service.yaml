@@ -4,6 +4,8 @@ metadata:
   name: mysql-service
   namespace: "namespace-value"
 spec:
+  selector:
+    app : "mysql-namespace-value"
   ports:
     - protocol: TCP
       port: 80
