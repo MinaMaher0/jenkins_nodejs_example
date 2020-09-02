@@ -26,19 +26,19 @@ spec:
           valueFrom:
             secretRef: 
               name: app-secret
-              value: HOST
+              key: HOST
         - name : USERNAME
           valueFrom:
             secretRef: 
               name: app-secret
-              value: USERNAME
+              key: USERNAME
         - name : PASSWORD
           valueFrom:
             secretRef: 
               name: app-secret
-              value: PASSWORD
+              key: PASSWORD
         - name : DATABASE
           valueFrom:
             secretRef: 
               name: app-secret
-              value: DATABASE
+              key: DATABASE
