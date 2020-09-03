@@ -1,7 +1,6 @@
 ---
   - name: deploy node app
     hosts: localhost
-    connection: local
     tasks:
     - name: create mysql service 
       shell: kubectl apply -f mysql-service.yaml
