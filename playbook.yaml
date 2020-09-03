@@ -1,0 +1,16 @@
+---
+  name: deploy node app
+  hosts: localhost
+  connection: local
+  tasks:
+   - name: create mysql service 
+     shell: kubectl apply -f mysql-service.yaml
+
+   - name: create app secret
+     shell: kubectl apply -f app-secret.yaml 
+
+   - name: create app deployment
+     shell: kubectl apply -f app-deployment.yaml
+  
+   - name: create app service
+     shell: kubectl apply -f app-service.yaml
