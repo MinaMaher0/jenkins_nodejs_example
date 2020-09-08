@@ -4,7 +4,7 @@ pipeline {
       string( name: 'commitID' ) 
     }
     environment {
-        Nexus_IP = credentials('nexus_IP')
+        Nexus_IP = credentials('Nexus_IP')
         Nexus_user_name     = credentials('Nexus_user_name')
         Nexus_password	     = credentials('Nexus_password	')
     }
