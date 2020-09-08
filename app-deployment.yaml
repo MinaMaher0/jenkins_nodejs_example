@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: node-app
-        image: minamaher0/node-app
+        image: nexus-IP/node-app
         ports:
         - containerPort: 3000
         env:
