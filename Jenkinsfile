@@ -4,8 +4,9 @@ pipeline {
       string( name: 'commitID' ) 
     }
     environment {
-        Docker_user_name     = credentials('Docker_user_name')
-        Docker_password	     = credentials('Docker_password	')
+        Nexus_IP = credentials('nexus_IP')
+        Nexus_user_name     = credentials('Nexus_user_name')
+        Nexus_password	     = credentials('Nexus_password	')
     }
     stages {
       stage('Build docker image'){
@@ -20,9 +21,9 @@ pipeline {
 
       stage('pushing the image to docker hub'){
         steps{
-          sh "docker tag node-app $Docker_user_name/node-app"
-          sh "docker login -u $Docker_user_name -p $Docker_password"
-          sh "docker push $Docker_user_name/node-app"
+          sh "docker tag node-app $Nexus_IP/node-app"
+          sh "docker login -u $Nexus_user_name -p $Nexus_password $Nexus_IP"
+          sh "docker push $Nexus_IP/node-app"
         }
       }
     }
