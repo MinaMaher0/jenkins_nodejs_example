@@ -8,7 +8,6 @@ pipeline {
         mysql_host     = credentials('mysql_host')
         mysql_username     = credentials('mysql_username')
         mysql_password     = credentials('mysql_password')
-        mysql_database	     = credentials('mysql_database')
     }
     stages {
       stage('replace secrets and namespace value'){
